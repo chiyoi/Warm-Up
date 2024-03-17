@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://drh2058uv6se5"]
+
+[ext_resource type="Script" path="res://Scenes/Circle/circle.gd" id="1_j503k"]
+
+[node name="Circle" type="Button"]
+custom_minimum_size = Vector2(80, 80)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+toggle_mode = true
+button_pressed = true
+text = "C"
+script = ExtResource("1_j503k")
+
+[node name="History" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = -81.0
+offset_right = 2102.0
+offset_bottom = 85.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.752941, 0.752941, 0.752941, 1)
+
+[node name="Circles" type="HBoxContainer" parent="History"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Circle1" type="ColorRect" parent="History/Circles"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Circle2" type="ColorRect" parent="History/Circles"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Circle3" type="ColorRect" parent="History/Circles"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Circle4" type="ColorRect" parent="History/Circles"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Circle5" type="ColorRect" parent="History/Circles"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 4
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

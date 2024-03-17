@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://13n5t3pkw63u"]
+
+[ext_resource type="Script" path="res://Scenes/Canvas/canvas.gd" id="1_pkq42"]
+[ext_resource type="PackedScene" uid="uid://cubgdnoh1kjbh" path="res://Scenes/Canvas/SideBar/side_bar.tscn" id="2_ndqlo"]
+
+[node name="CanvasRoot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Canvas" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pkq42")
+
+[node name="TopBar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 130.0
+grow_horizontal = 2
+color = Color(0.580392, 0.580392, 0.580392, 1)
+
+[node name="Title" type="Label" parent="TopBar"]
+layout_mode = 2
+offset_left = 40.0
+offset_top = 30.0
+offset_right = 1520.0
+offset_bottom = 121.0
+text = "Warm Up: Practice Everyday!"
+
+[node name="Buttons" type="HBoxContainer" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -239.0
+offset_right = -32.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 2
+
+[node name="HistoryButton" type="Button" parent="TopBar/Buttons"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "H"
+
+[node name="NewCanvasButton" type="Button" parent="TopBar/Buttons"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "N"
+
+[node name="SideBar" parent="." instance=ExtResource("2_ndqlo")]
+layout_mode = 1
+offset_left = 5.0
+offset_top = -304.0
+offset_right = 177.0
+offset_bottom = 331.0
